@@ -1,0 +1,228 @@
+/* PADRONIZAÇÃO */
+*{
+  margin: 0; padding: 0; box-sizing: border-box;
+  --destaque: #e51024;
+  --sombra: #C41414;
+}
+
+@font-face {
+  font-family: rubik;
+  src: url('./font/rubik.ttf');
+}
+
+/* HEADER */
+header{
+  width: 100%;
+  height: 14vh;
+  grid-area: header;
+
+  position: relative;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: red;
+  border-bottom: 2px solid var(--sombra);
+}
+
+.logo{
+  margin: 0 50px;
+  height: 80px;
+
+  cursor: pointer;
+}
+
+.linksContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+
+.link{
+  height: 26px;
+  width: 100px;
+
+  margin-left: 10px;
+
+  border: none;
+  border-bottom: 3px solid #979A9A;
+  border-radius: 2px;
+
+  text-decoration: none;
+  color: black;
+  background-color: #F0F3F4;
+  outline: none;
+
+  font-family: rubik;
+  transition: all 0.2s;
+}
+
+.link:hover{
+  cursor: pointer;
+  border-bottom: 3px solid var(--sombra);
+  font-weight: 800;
+}
+
+/* MAIN */
+main{
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+
+  background-image: url('./img/background_marvel.jpg');
+  background-size: 300px;
+}
+
+.gridContainer{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 3fr));
+  grid-gap: 20px;
+
+  max-width: 75vw;
+  height: 90%;
+  padding: 10px;
+  justify-content: center;
+
+  border-radius: 10px;
+  background-color: RGBA(0,0,0,0.5);
+}
+
+.heroisContainer{
+  position: relative;
+  max-height: 400px;
+  width: 100%;
+  padding: 10px 10px 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;;
+  align-items: flex-start;
+
+  background-color: white;
+  border-radius: 6px;
+  object-fit: cover;
+  overflow: hide;
+
+  font-family: rubik;
+  transition: color 0.2s;
+}
+
+.herois{
+  height: 90%;
+  width: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+  transition: all 0.9s;
+}
+
+.imagemOculta{
+  height: 40%;
+}
+
+.heroiName{
+  margin: 10px 0;
+}
+
+.heroiName, .heroiDescricao{
+  font-family: rubik;
+  transition: all 0.5s;
+}
+
+
+.descricaoVisivel{
+  height: 60%;
+  opacity: 1 !important;
+}
+
+.descricaoOculta{
+  opacity: 0.0;
+}
+
+.descricaoContainer{
+  transition: all 0.9s;
+}
+
+.heroiName:hover{
+  cursor: pointer;
+  color: var(--destaque);
+  transition: all 0.3s;
+}
+
+.fav{
+  position: absolute;
+  top: 20px;
+  left: 84%;
+
+  cursor: pointer;
+  color: RGBA(255,0,0,0.5);
+  font-size: 30px;
+  transition: all 0.2s;
+}
+
+.fav:hover{
+  color: RGBA(255,0,0,1);
+  font-size: 31px;
+}
+
+/* FOOTER */
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 30px;
+
+  background-color: var(--destaque);
+  border-top: 3px solid var(--sombra);
+}
+
+footer p{
+  color: #979A9A;
+  transition: all 0.2s;
+}
+
+footer p:hover{
+  cursor: pointer;
+  color: white;
+}
+
+/* RESPONSIVIDADE */
+
+@media only screen and (max-width: 850px) {
+  /* HEADER */
+  header{
+    flex-wrap: wrap;
+    height: 140px;
+  }
+
+  .logo{
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  .pesquisaContainer{
+    width: 100%;
+  }
+
+  .linksContainer{
+    width: 100%;
+  }
+
+  .link{
+    width: 80px;
+    margin: 0 2px;
+  }
+
+  /* MAIN */
+  .heroisContainer{
+    margin: 0 auto;
+  }
+}
